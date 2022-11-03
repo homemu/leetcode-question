@@ -71,10 +71,12 @@
       //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int removeDuplicates(int[] nums) {
+        // The key is replacing duplicates with unique element next to them.
         if(nums.length==0){
             return 0;
         }
         int slow = 0, fast = 0;
+        // keep the elements before slow is unique, than move different element into slow + 1
         while(fast < nums.length){
             if(nums[slow] != nums[fast]){
                 slow++;
